@@ -1,0 +1,19 @@
+<form action="<%= session_url %>" method="post">
+  <%= csrf_token %>
+
+  <label for="user[user_name]">Username:</label>
+  <input
+    type="text"
+    name="user[user_name]"
+    id="user[user_name]"
+    value="<%= @user.user_name %>">
+  <br>
+  
+  <label for="user[password]">Password:</label>
+  <input
+    type="password"
+    name="user[password]"
+    id="user[password]">
+
+    <input type="submit" value="Log in">
+</form>

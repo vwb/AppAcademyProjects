@@ -1,0 +1,30 @@
+<% action_url = (this_post.persisted?) ? post_url(this_post) : posts_url %>
+<% method = (this_post.persisted?) ? :patch : :post %>
+<% button_message = (this_post.persisted?) ? "Save" : "Submit Post!" %>
+
+<form action="<%= action_url %>" method="post">
+  <%= csrf_token %>
+  <%= form_method_type method %>
+
+  <label for="post[title]">Post title</label>
+  <input
+    type="text"
+    name="post[title]"
+    id="post[title]"
+    value= "<%= this_post.title %>">
+  <br>
+
+  <label for="post[content]">Content</label>
+  <textarea name="post[content]" id="post[content]"><%= this_post.content %></textarea>
+  <br>
+
+  <label for="post[url]">URL</label>
+  <input
+    type="text"
+    name="post[url]"
+    value="<%= this_post.url %>"
+    id="post[url]">
+  <br>
+
+  <input type="submit" value="<%=button_message%>">
+</form>

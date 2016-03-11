@@ -1,0 +1,29 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.center {
+  text-align: center;
+}
+
+.key {
+  width: 50px;
+  height: 250px;
+  background-color: white;
+  border: 1px solid black;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+}
+
+.pressed {
+  background-color: gray;
+  border-style: inset;
+}
+
+.keyboard {
+  width: 260px;
+  margin: 0px auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(50%);
+}

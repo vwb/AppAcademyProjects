@@ -1,0 +1,63 @@
+html, body, figure, figcaption, ul, li, h1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-align: inherit;
+}
+
+h1 {
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.ttt {
+  margin: 0 auto;
+  position: relative;
+  display: block;
+}
+
+.winner {
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  font-size: 120px;
+  font-weight: 700;
+
+
+  float: none;
+  position: absolute;
+  line-height: 1;
+  bottom: -450px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.row {
+  position: relative;
+  width: 600px;
+  margin: 30px auto;
+}
+
+.square {
+  position: relative;
+  float: left;
+  background-color: lightgray;
+  list-style: none;
+  border: 2px solid black;
+  min-height: 200px;
+  width: 196px;
+  text-align: center;
+  font-size: 150px;
+  font-weight: 700;
+}
+
+.square:hover {
+  background-color: yellow;
+}
+
+.group {
+  content: "";
+  display: block;
+  clear: both;
+}

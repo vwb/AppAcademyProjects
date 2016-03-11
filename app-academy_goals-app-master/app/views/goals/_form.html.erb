@@ -1,0 +1,30 @@
+<% method_type = goal.persisted? ? :patch : :post %>
+<% action_type = goal.persisted? ? goal_url(goal) : goals_url %>
+<% message = goal.persisted? ? "Change my dream!" : "Come True" %>
+
+<form action="<%= action_type %>" method="post">
+  <input type="hidden" name="_method" value="<%= method_type %>">
+  <%= csrf_token %>
+
+
+  <label for="content">Content:</label>
+  <br/>
+  <textarea name="goal[content]"
+            id="content"
+            rows="8"
+            cols="60"><%= goal.content %></textarea>
+  <br/>
+  <br/>
+  <% Goal::V_STAT.each do |status| %>
+  <label for="<%= status %>"><%= status.capitalize %></label>
+    <input
+      name="goal[visibility_status]"
+      id="<%= status %>"
+      type="radio"
+      value="<%= status %>"
+      <%= "checked" if goal.visibility_status == status %>>
+  <% end %>
+
+  <p><input type="submit" value="<%= message %>"></p>
+
+</form>

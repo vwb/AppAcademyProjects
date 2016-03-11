@@ -1,0 +1,34 @@
+body {
+  background-image: url(http://orig14.deviantart.net/e4fa/f/2007/248/4/3/sloth_baby_by_whyamithewerewolf.jpg);
+  background-size: cover;
+}
+
+nav {
+  position: relative;
+}
+
+.tile {
+  position: relative;
+  float: left;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-style: outset;
+}
+
+.clicked {
+  border-style: inset;
+  background-color: gray;
+}
+
+.board {
+  position: relative;
+  width: 260px;
+  height: 220px;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 50px;
+}

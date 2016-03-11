@@ -1,0 +1,27 @@
+<% if goal.completion_status %>
+  <% button = button_to "Just Kidding...", incomplete_goal_url(goal), method: :post %>
+<% else %>
+  <% button = button_to "Realized Dream", complete_goal_url(goal), method: :post %>
+<% end %>
+
+<h2> Your Dream </h2>
+
+<% if goal.completion_status %>
+<h3>Completed Your Dream!</h3>
+<% end %>
+
+<p> <%=goal.content%> </p>
+
+<div border-width="1px" >
+  <h2> Your Options: </h2>
+  <table>
+    <tr>
+      <td> <%= button %> </td>
+      <td> <%= link_to "Change your dream", edit_goal_url(goal) %> </td>
+      <td> <%= button_to "Face Reality", goal_url(goal), method: :delete %> </td>
+      <td> <%= goal.visibility_status.capitalize %> </td>
+    </tr>
+  </table>
+
+
+</div>

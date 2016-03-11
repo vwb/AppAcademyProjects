@@ -1,0 +1,24 @@
+<% action_url = (this_sub.persisted?) ? sub_url(this_sub) : subs_url %>
+<% method = (this_sub.persisted?) ? :patch : :post %>
+<% button_message = (this_sub.persisted?) ? "Save" : "Make Sub!" %>
+
+<form action="<%= action_url %>" method="post">
+  <%= csrf_token %>
+  <%= form_method_type method %>
+
+  <label for="sub[title]">Sub title</label>
+  <input
+    type="text"
+    name="sub[title]"
+    id="sub[title]"
+    value="<%= this_sub.title %>">
+  <br>
+
+  <label for="sub[description]">Description</label>
+  <textarea
+    name="sub[description]"
+    id="sub[description]"><%= this_sub.description %></textarea>
+  <br>
+
+  <input type="submit" value="<%=button_message%>">
+</form>
