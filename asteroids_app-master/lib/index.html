@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Asteroids!</title>
+
+    <style>
+      html, body, canvas {
+        padding: 0px;
+        margin: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas></canvas>
+
+    <script src="bundle.js"></script>
+    <script type="application/javascript" src="keymaster.js"></script>
+
+    <script>
+
+      var canvasEl = document.getElementsByTagName("canvas")[0];
+      canvasEl.height = window.innerHeight;
+      // console.log(canvasEl.height);
+      canvasEl.width = window.innerWidth;
+      // console.log(canvasEl.width);
+      var ctx = canvasEl.getContext("2d");
+      var game = new Game(canvasEl.width, canvasEl.height);
+      new GameView(game).start(ctx);
+
+
+    </script>
+  </body>
+</html>
